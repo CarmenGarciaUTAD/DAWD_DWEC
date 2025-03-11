@@ -16,7 +16,11 @@ export const productSchema = z.object({
         .min(1, "La descripción es requerida")
         .max(200, "La descripción no puede tener más de 200 caracteres"),
     user_id: z
-        .string().uuid(),
+        .number({
+            required_error: "El ID es requerido",
+            invalid_type_error: "El ID debe ser un número"
+        })
+        .positive("El ID debe ser un número positivo"),
 });
 
 export type productSchema = z.infer<typeof productSchema>;

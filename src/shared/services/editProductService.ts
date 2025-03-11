@@ -4,7 +4,7 @@ export async function editproductService(product: productSchema, id: number) {
     const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/rest/v1/${id}`,
         {
-            method: "PUT",
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${localStorage.getItem("token")}`
