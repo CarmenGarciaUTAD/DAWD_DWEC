@@ -2,7 +2,7 @@ import { AuthSchema } from "../schemas/auth.schema";
 
 export async function registerService(credentials: AuthSchema) {
     const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/auth/register`,
+        `${process.env.NEXT_PUBLIC_API_URL}//auth/v1/signup`,
         {
             method: "POST",
             headers: {
