@@ -15,7 +15,7 @@ export async function editproductService(product: productSchema, id: number) {
 
     if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.message || "Error al actualizar product")
+        throw new Error(errorData.message || "Error al actualizar producto")
     }
 
     const data = await response.json()
